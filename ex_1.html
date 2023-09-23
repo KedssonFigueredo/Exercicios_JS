@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .result-section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+  
+    <nav>
+        <a href="ex_1.html">Exercício 1</a>
+        <a href="ex_2.html">Exercício 2</a>
+        <a href="ex_3.html">Exercício 3</a>
+        <a href="ex_4.html">Exercício 4</a>
+        <a href="ex_5.html">Exercício 5</a>
+        <a href="ex_6.html">Exercício 6</a>
+        <a href="ex_7.html">Exercício 7</a>
+    </nav>
+
+    <header>
+        <h1>Calculadora de Venda</h1>
+    </header>
+
+    <main>
+        <label for="valorMax">Informe o valor máximo:</label>
+        <input type="number" id="valorMax">
+        <button onclick="exibirNumerosPares()">Exibir Números Pares</button>
+
+        <section class="result-section">
+            <div id="resul">
+                <h2>Números Pares:</h2>
+                <p id="numPares"></p>
+                <h2>Soma Total:</h2>
+                <p id="somaTotal"></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function exibirNumerosPares() {
+            document.getElementById("numPares").innerText = "";
+            document.getElementById("somaTotal").innerText = "";
+
+            const valorMaximo = parseInt(document.getElementById("valorMax").value);
+
+            let soma = 0;
+
+            for (let i = 2; i <= valorMaximo; i += 2) {
+                document.getElementById("numPares").innerText += i + " - ";
+                soma += i;
+            }
+
+            document.getElementById("somaTotal").innerText = soma;
+        }
+    </script>
+</body>
+
+</html>
